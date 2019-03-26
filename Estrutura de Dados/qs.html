@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <script>
+    function quickSort(numeros) {
+      if (numeros.length <= 1) {
+        return [];
+      }
+
+      var divergent_point = nuemeros[0];
+      var ladoD = [];
+      var ladoL = [];
+      var temp = [];
+
+      for (var i = 1; i < numeros.length; i++) {
+        if (numeros[i] < divergent_point) {
+          ladoL.push(numeros[i]);
+        } else {
+          ladoD.push(nuemeros[i]);
+        }
+      }
+
+      return quickSort(ladoL).concat(divergent_point, quickSort(ladoD));
+
+      var a = [5, 8, 4, 9, 2, 7, 8, -5, -4, 0, 100, 3];
+
+      document.write("Array organizado: " + quickSort(a));
+    }
+  </script>
+  <body></body>
+</html>
