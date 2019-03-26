@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+    <script>
+
+        $( document ).ready(function() {
+            let a       = [5, 8, 4, 9, 2, 7, 8, -5, -4, 0, 100, 3],
+                 res = `${quickSort( a )}`;
+    
+            $("#printaAlgo").html( "Array organizado: " +  res );
+        });
+
+        function quickSort( numeros ) {
+
+        
+
+            if( numeros.length === 0 ) {
+                return [];
+            }
+
+            let divergent_point = numeros[0],
+                ladoD = [],
+                ladoL = [],
+                temp  = [];
+
+            for( var i = 1; i < numeros.length; i++ ) {
+                if( numeros[i] < divergent_point ) {
+                ladoL.push(numeros[i]);
+                } else {
+                ladoD.push(numeros[i]);
+                }
+            }
+            
+            return quickSort(ladoL).concat(divergent_point, quickSort(ladoD));           
+        }
+    </script>
+    <body>
+
+    <div id="printaAlgo" name="printaAlgo"> </div>
+    </body>
+</html>
