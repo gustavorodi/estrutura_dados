@@ -1,0 +1,36 @@
+@autor Gustavo Caetano Rodrigues
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+    <script>
+
+        $( document ).ready(function() {
+                    let a       = [5, 8, 4, 9, 2, 7, 8, -5, -4, 0, 100, 3],
+                        res = `${bubbleSort( a )}`;
+            
+                    $("#printaAlgo").html( "Array organizado: " +  res );
+                });
+
+		function bubbleSort(arrayDeNumeros){
+			var len = arrayDeNumeros.length;
+			for (var i = len-1; i>=0; i--){
+				for(var j = 1; j<=i; j++){
+					if(arrayDeNumeros[j-1]>arrayDeNumeros[j]){
+						var temp = arrayDeNumeros[j-1];
+						arrayDeNumeros[j-1] = arrayDeNumeros[j];
+						arrayDeNumeros[j] = temp;
+					}
+				}
+			}
+			return arrayDeNumeros;
+		}
+	</script>
+	<body>
+        <div id="printaAlgo" name="printaAlgo"></div>
+	
+	</body>
+</html>
