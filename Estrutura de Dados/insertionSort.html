@@ -1,0 +1,33 @@
+@autor Gustavo Caetano Rodrigues
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+    <script>
+
+            $( document ).ready(function() {
+                                let a       = [5, 8, 4, 9, 2, 7, 8, -5, -4, 0, 100, 3],
+                                    res = `${insertionSort( a )}`;
+                        
+                                $("#printaAlgo").html( "Array organizado: " +  res );
+                            });
+
+		function insertionSort (arrayDeNumeros) {
+			for (var i = 0; i < arrayDeNumeros.length; i++) {
+			let value = arrayDeNumeros[i]
+				for (var j = i - 1; j > -1 && arrayDeNumeros[j] > value; j--) {
+					arrayDeNumeros[j + 1] = arrayDeNumeros[j]
+				}
+				arrayDeNumeros[j + 1] = value
+			}
+			return arrayDeNumeros
+		}
+		
+	</script>
+	<body>
+	<div id="printaAlgo" name="printaAlgo"></div>
+	</body>
+</html>
